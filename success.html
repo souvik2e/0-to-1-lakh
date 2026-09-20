@@ -7,250 +7,119 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
-:root {
-  --white:#ffffff; --off:#fafaf8; --rule:#e8e4dc;
-  --muted:#9a9488; --mid:#6b6560; --ink:#1a1916;
-  --gold:#b8820a; --gold-pale:#fdf6e3; --gold-mid:#e8c96a;
-  --green:#16a34a; --rust:#7a2c0a;
-  --serif:'Instrument Serif',Georgia,serif;
-  --sans:'Inter',system-ui,sans-serif;
-}
-*,*::before,*::after { box-sizing:border-box; margin:0; padding:0; }
-body {
-  font-family:var(--sans); background:var(--off); color:var(--ink);
-  min-height:100vh; display:flex; flex-direction:column;
-  align-items:center; justify-content:center; padding:40px 20px;
-  -webkit-font-smoothing:antialiased;
-}
-.wrap { max-width:560px; width:100%; }
+:root{--white:#fff;--off:#fafaf8;--rule:#e8e4dc;--muted:#9a9488;--mid:#6b6560;--ink:#1a1916;--gold:#b8820a;--gold-pale:#fdf6e3;--gold-mid:#e8c96a;--green:#16a34a;--rust:#7a2c0a;--serif:'Instrument Serif',Georgia,serif;--sans:'Inter',system-ui,sans-serif;}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:var(--sans);background:var(--off);color:var(--ink);min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:40px 20px;-webkit-font-smoothing:antialiased;}
+.wrap{max-width:560px;width:100%;}
+.state{display:none;text-align:center;}
+.state.active{display:block;}
+.spinner{width:42px;height:42px;border:2px solid var(--rule);border-top-color:var(--ink);border-radius:50%;animation:spin .8s linear infinite;margin:0 auto 20px;}
+@keyframes spin{to{transform:rotate(360deg);}}
+.load-title{font-family:var(--serif);font-size:22px;color:var(--ink);margin-bottom:8px;}
+.load-sub{font-size:13px;color:var(--muted);line-height:1.7;}
 
-/* STATES */
-.state { display:none; text-align:center; }
-.state.active { display:block; }
+.s-icon{font-size:56px;display:block;margin-bottom:18px;}
+.s-title{font-family:var(--serif);font-size:clamp(30px,6vw,44px);font-weight:300;color:var(--ink);letter-spacing:-.02em;margin-bottom:10px;line-height:1.05;}
+.s-title em{font-style:italic;color:var(--green);}
+.s-sub{font-size:14px;color:var(--mid);line-height:1.85;margin:0 auto 30px;font-weight:300;max-width:400px;}
 
-/* SPINNER */
-.spinner {
-  width:42px; height:42px; border:2px solid var(--rule);
-  border-top-color:var(--ink); border-radius:50%;
-  animation:spin 0.8s linear infinite; margin:0 auto 20px;
-}
-@keyframes spin { to { transform:rotate(360deg); } }
-.loading-title {
-  font-family:var(--serif); font-size:22px; color:var(--ink);
-  margin-bottom:8px;
-}
-.loading-sub { font-size:13px; color:var(--muted); line-height:1.7; }
+.dl-card{background:var(--white);border:1px solid var(--rule);overflow:hidden;margin-bottom:10px;text-align:left;}
+.dlc-head{background:var(--ink);padding:12px 20px;display:flex;align-items:center;justify-content:space-between;}
+.dlc-phase{font-size:10px;font-weight:500;color:rgba(255,255,255,.42);letter-spacing:.14em;text-transform:uppercase;}
+.dlc-title{font-size:13px;color:var(--white);font-weight:400;}
+.dlc-body{padding:14px 20px;display:flex;align-items:center;justify-content:space-between;gap:14px;}
+.dlc-desc{font-size:12px;color:var(--mid);line-height:1.65;}
+.dlc-btn{display:inline-block;background:var(--ink);color:var(--white);padding:10px 18px;font-size:13px;font-weight:500;text-decoration:none;white-space:nowrap;flex-shrink:0;transition:opacity .15s;font-family:var(--sans);}
+.dlc-btn:hover{opacity:.82;}
 
-/* SUCCESS */
-.success-icon { font-size:56px; display:block; margin-bottom:18px; }
-.success-title {
-  font-family:var(--serif); font-size:clamp(32px,6vw,44px);
-  font-weight:300; color:var(--ink); letter-spacing:-0.02em;
-  margin-bottom:10px; line-height:1.05;
-}
-.success-title em { font-style:italic; color:var(--green); }
-.success-sub {
-  font-size:14px; color:var(--mid); line-height:1.85;
-  margin:0 auto 32px; font-weight:300; max-width:420px;
-}
+.info-box{background:var(--gold-pale);border:1px solid var(--gold-mid);padding:15px 18px;margin:16px 0;text-align:left;}
+.ib-title{font-size:11px;font-weight:500;color:var(--gold);text-transform:uppercase;letter-spacing:.12em;margin-bottom:6px;}
+.ib-body{font-size:12px;color:var(--mid);line-height:1.8;}
+.ib-body strong{color:var(--ink);}
+.support{font-size:12px;color:var(--muted);line-height:1.75;margin-top:10px;}
+.support strong{color:var(--mid);}
 
-/* DOWNLOAD CARDS */
-.dl-card {
-  background:var(--white); border:1px solid var(--rule);
-  overflow:hidden; margin-bottom:10px; text-align:left;
-}
-.dlc-head {
-  background:var(--ink); padding:12px 20px;
-  display:flex; align-items:center; justify-content:space-between;
-}
-.dlc-phase {
-  font-size:10px; font-weight:500; color:rgba(255,255,255,0.42);
-  letter-spacing:0.14em; text-transform:uppercase;
-}
-.dlc-title { font-size:13px; color:var(--white); font-weight:400; }
-.dlc-body {
-  padding:14px 20px; display:flex; align-items:center;
-  justify-content:space-between; gap:16px;
-}
-.dlc-desc { font-size:12px; color:var(--mid); line-height:1.65; }
-.dlc-btn {
-  display:inline-block; background:var(--ink); color:var(--white);
-  padding:10px 18px; font-size:13px; font-weight:500;
-  text-decoration:none; white-space:nowrap; flex-shrink:0;
-  transition:opacity 0.15s; font-family:var(--sans);
-}
-.dlc-btn:hover { opacity:0.82; }
+.p-icon{font-size:46px;display:block;margin-bottom:16px;}
+.p-title{font-family:var(--serif);font-size:26px;font-weight:300;color:var(--ink);margin-bottom:10px;}
+.p-sub{font-size:14px;color:var(--mid);line-height:1.85;margin-bottom:20px;}
 
-/* INFO BOX */
-.info-box {
-  background:var(--gold-pale); border:1px solid var(--gold-mid);
-  padding:16px 20px; margin:18px 0; text-align:left;
-}
-.ib-title {
-  font-size:11px; font-weight:500; color:var(--gold);
-  text-transform:uppercase; letter-spacing:0.12em; margin-bottom:7px;
-}
-.ib-body { font-size:12px; color:var(--mid); line-height:1.8; }
-.ib-body strong { color:var(--ink); }
+.f-icon{font-size:48px;display:block;margin-bottom:16px;}
+.f-title{font-family:var(--serif);font-size:28px;font-weight:300;color:var(--ink);margin-bottom:10px;}
+.f-sub{font-size:14px;color:var(--mid);line-height:1.85;margin-bottom:22px;}
+.f-box{background:var(--white);border:1px solid var(--rule);padding:15px 18px;margin-bottom:10px;text-align:left;}
+.f-box p{font-size:13px;color:var(--mid);line-height:1.75;}
+.f-box strong{color:var(--ink);}
+.btn-retry{display:inline-block;background:var(--ink);color:var(--white);padding:13px 32px;font-size:14px;font-weight:500;text-decoration:none;margin-top:16px;font-family:var(--sans);transition:opacity .15s;}
+.btn-retry:hover{opacity:.85;}
 
-.support-note { font-size:12px; color:var(--muted); line-height:1.75; margin-top:10px; }
-.support-note strong { color:var(--mid); }
+.no-icon{font-size:48px;display:block;margin-bottom:16px;}
+.no-title{font-family:var(--serif);font-size:26px;font-weight:300;color:var(--ink);margin-bottom:10px;}
+.no-sub{font-size:14px;color:var(--mid);line-height:1.85;margin-bottom:20px;}
 
-/* PENDING */
-.pending-icon { font-size:46px; display:block; margin-bottom:16px; }
-.pending-title {
-  font-family:var(--serif); font-size:26px; font-weight:300;
-  color:var(--ink); margin-bottom:10px;
-}
-.pending-sub { font-size:14px; color:var(--mid); line-height:1.85; margin-bottom:22px; }
-
-/* FAILED */
-.fail-icon { font-size:48px; display:block; margin-bottom:16px; }
-.fail-title {
-  font-family:var(--serif); font-size:28px; font-weight:300;
-  color:var(--ink); margin-bottom:10px;
-}
-.fail-sub { font-size:14px; color:var(--mid); line-height:1.85; margin-bottom:24px; }
-.fail-box {
-  background:var(--white); border:1px solid var(--rule);
-  padding:16px 20px; margin-bottom:10px; text-align:left;
-}
-.fail-box p { font-size:13px; color:var(--mid); line-height:1.75; }
-.fail-box strong { color:var(--ink); }
-.btn-retry {
-  display:inline-block; background:var(--ink); color:var(--white);
-  padding:14px 36px; font-size:14px; font-weight:500;
-  text-decoration:none; margin-top:18px; font-family:var(--sans);
-  transition:opacity 0.15s;
-}
-.btn-retry:hover { opacity:0.85; }
-
-/* NO ORDER */
-.noorder-icon { font-size:48px; display:block; margin-bottom:16px; }
-.noorder-title {
-  font-family:var(--serif); font-size:26px; font-weight:300;
-  color:var(--ink); margin-bottom:10px;
-}
-.noorder-sub { font-size:14px; color:var(--mid); line-height:1.85; margin-bottom:22px; }
-
-@media(max-width:500px) {
-  .dlc-body { flex-direction:column; align-items:flex-start; }
-  .dlc-btn { width:100%; text-align:center; }
-}
+@media(max-width:500px){.dlc-body{flex-direction:column;align-items:flex-start;}.dlc-btn{width:100%;text-align:center;}}
 </style>
 </head>
 <body>
 <div class="wrap">
 
-  <!-- STATE: LOADING (shown first while we verify) -->
+  <!-- LOADING -->
   <div class="state active" id="state-loading">
     <div class="spinner"></div>
-    <div class="loading-title">Verifying your payment...</div>
-    <p class="loading-sub">Please do not close this page.<br>This takes just a few seconds.</p>
+    <div class="load-title">Verifying your payment...</div>
+    <p class="load-sub">Please do not close this page.<br>This takes just a few seconds.</p>
   </div>
 
-  <!-- STATE: SUCCESS — PDF links shown ONLY after Cashfree confirms PAID -->
+  <!-- SUCCESS — PDFs only appear after Cashfree confirms PAID -->
   <div class="state" id="state-success">
-    <span class="success-icon">🎉</span>
-    <div class="success-title">Payment confirmed.<br><em>Welcome.</em></div>
-    <p class="success-sub">Your complete Creator Blueprint is ready. Download all 3 parts below and save them to your device right now.</p>
+    <span class="s-icon">🎉</span>
+    <div class="s-title">Payment confirmed.<br><em>Welcome.</em></div>
+    <p class="s-sub">Your complete Creator Blueprint is ready. Download all 3 parts and save them to your device now.</p>
 
     <div class="dl-card">
-      <div class="dlc-head">
-        <span class="dlc-phase">Phase 1 of 3</span>
-        <span class="dlc-title">Chapters 1 – 4</span>
-      </div>
-      <div class="dlc-body">
-        <div class="dlc-desc">
-          Real story · E+E+E formula · Algorithm secrets<br>
-          5 Hook formulas · Colour psychology · ₹0 studio
-        </div>
-        <a id="link-p1" href="#" target="_blank" rel="noopener" class="dlc-btn">Download →</a>
-      </div>
+      <div class="dlc-head"><span class="dlc-phase">Phase 1 of 3</span><span class="dlc-title">Chapters 1 – 4</span></div>
+      <div class="dlc-body"><div class="dlc-desc">Real story · E+E+E formula · Algorithm secrets · 5 Hook formulas · Colour psychology · ₹0 studio</div><a id="lp1" href="#" target="_blank" rel="noopener" class="dlc-btn">Download →</a></div>
     </div>
 
     <div class="dl-card">
-      <div class="dlc-head">
-        <span class="dlc-phase">Phase 2A of 3</span>
-        <span class="dlc-title">Chapters 5 – 6</span>
-      </div>
-      <div class="dlc-body">
-        <div class="dlc-desc">
-          Caption formula · 5 hashtag sets · Brand deals<br>
-          3 email templates · Rate card · Negotiation rules
-        </div>
-        <a id="link-p2a" href="#" target="_blank" rel="noopener" class="dlc-btn">Download →</a>
-      </div>
+      <div class="dlc-head"><span class="dlc-phase">Phase 2A of 3</span><span class="dlc-title">Chapters 5 – 6</span></div>
+      <div class="dlc-body"><div class="dlc-desc">Caption formula · 5 hashtag sets · Brand deals · 3 email templates · Rate card · Negotiation rules</div><a id="lp2a" href="#" target="_blank" rel="noopener" class="dlc-btn">Download →</a></div>
     </div>
 
     <div class="dl-card">
-      <div class="dlc-head">
-        <span class="dlc-phase">Phase 2B of 3</span>
-        <span class="dlc-title">Chapters 7 – 8 + Referral</span>
-      </div>
-      <div class="dlc-body">
-        <div class="dlc-desc">
-          Manager system · Affiliate stacking<br>
-          Income roadmap · Referral programme · Closing letter
-        </div>
-        <a id="link-p2b" href="#" target="_blank" rel="noopener" class="dlc-btn">Download →</a>
-      </div>
+      <div class="dlc-head"><span class="dlc-phase">Phase 2B of 3</span><span class="dlc-title">Chapters 7 – 8 + Referral</span></div>
+      <div class="dlc-body"><div class="dlc-desc">Manager system · Affiliate stacking · Income roadmap · Referral programme · Closing letter</div><a id="lp2b" href="#" target="_blank" rel="noopener" class="dlc-btn">Download →</a></div>
     </div>
 
     <div class="info-box">
-      <div class="ib-title">How to download your PDFs</div>
-      <div class="ib-body">
-        Click each <strong>Download →</strong> button → Google Drive opens →
-        tap the <strong>download icon (↓)</strong> at the top right to save the PDF to your device.<br><br>
-        <strong>Bookmark or screenshot this page</strong> — you can return to this URL anytime to re-download.
-      </div>
+      <div class="ib-title">How to download</div>
+      <div class="ib-body">Click each <strong>Download →</strong> button → Google Drive opens → tap the <strong>↓ download icon</strong> (top right) → PDF saves to your device.<br><br><strong>Bookmark this page</strong> — you can return anytime to re-download. The PDF links were also emailed to you.</div>
     </div>
-
-    <p class="support-note">
-      Any issue? DM <strong>@souvikk_09</strong> on Instagram — we reply within 2 hours.
-    </p>
+    <p class="support">Any issue? DM <strong>@souvikk_09</strong> on Instagram — we reply within 2 hours.</p>
   </div>
 
-  <!-- STATE: PENDING (payment processing, auto-retries) -->
+  <!-- PENDING -->
   <div class="state" id="state-pending">
-    <span class="pending-icon">⏳</span>
-    <div class="pending-title">Payment is processing</div>
-    <p class="pending-sub">
-      Your payment is being confirmed by the bank.<br>
-      This page will update automatically — please do not close it.
-    </p>
+    <span class="p-icon">⏳</span>
+    <div class="p-title">Payment is processing</div>
+    <p class="p-sub">Your payment is being confirmed by the bank. This page will update automatically — please do not close it.</p>
     <div class="spinner"></div>
   </div>
 
-  <!-- STATE: FAILED (payment not confirmed) -->
+  <!-- FAILED -->
   <div class="state" id="state-failed">
-    <span class="fail-icon">⚠️</span>
-    <div class="fail-title">Payment not confirmed</div>
-    <p class="fail-sub">We could not verify your payment. This can happen if the payment was cancelled or there was a bank error.</p>
-    <div class="fail-box">
-      <p>
-        <strong>If money was deducted from your account:</strong><br>
-        DM <strong>@souvikk_09</strong> on Instagram with a screenshot of your payment confirmation.
-        We will send the PDFs to you within 2 hours. No questions asked.
-      </p>
-    </div>
-    <div class="fail-box" style="margin-top:0;">
-      <p>
-        <strong>If no money was deducted:</strong><br>
-        Your payment did not go through. You can safely try again below.
-      </p>
-    </div>
+    <span class="f-icon">⚠️</span>
+    <div class="f-title">Payment not confirmed</div>
+    <p class="f-sub">We could not verify your payment. This can happen if payment was cancelled or there was a bank error.</p>
+    <div class="f-box"><p><strong>If money was deducted:</strong><br>DM <strong>@souvikk_09</strong> on Instagram with a screenshot of your payment. We will send the PDFs within 2 hours. No questions asked.</p></div>
+    <div class="f-box"><p><strong>If no money was deducted:</strong><br>Your payment did not go through. You can safely try again below.</p></div>
     <a href="index.html" class="btn-retry">← Go back and try again</a>
   </div>
 
-  <!-- STATE: NO ORDER ID (someone visits this page directly) -->
+  <!-- NO ORDER -->
   <div class="state" id="state-noorder">
-    <span class="noorder-icon">🔒</span>
-    <div class="noorder-title">Access denied</div>
-    <p class="noorder-sub">
-      This page is only available after a successful payment.<br>
-      Please complete your purchase first.
-    </p>
+    <span class="no-icon">🔒</span>
+    <div class="no-title">Access denied</div>
+    <p class="no-sub">This page is only accessible after a successful payment. Please complete your purchase first.</p>
     <a href="index.html" class="btn-retry">← Go to purchase page</a>
   </div>
 
@@ -258,29 +127,26 @@ body {
 
 <script>
 // ================================================================
-// REPLACE THIS WITH YOUR ACTUAL CLOUDFLARE WORKER URL
-// You get this URL after deploying worker.js to Cloudflare Workers
-// Example: https://blueprint-worker.yourname.workers.dev
+// REPLACE THIS with your Cloudflare Worker URL after deploying
 // ================================================================
-var WORKER_URL = "https://YOUR_WORKER_NAME.YOUR_SUBDOMAIN.workers.dev";
+var WORKER_URL = "https://blueprint-worker.byme.workers.dev";
 
 var retries    = 0;
-var maxRetries = 5;
+var maxRetries = 6;
 
-function show(stateId) {
-  var all = document.querySelectorAll(".state");
-  for (var i = 0; i < all.length; i++) all[i].classList.remove("active");
-  var el = document.getElementById("state-" + stateId);
+function show(id) {
+  document.querySelectorAll(".state").forEach(function(el) { el.classList.remove("active"); });
+  var el = document.getElementById("state-" + id);
   if (el) el.classList.add("active");
 }
 
 function setLinks(links) {
-  var p1  = document.getElementById("link-p1");
-  var p2a = document.getElementById("link-p2a");
-  var p2b = document.getElementById("link-p2b");
-  if (p1)  p1.href  = links.phase1;
-  if (p2a) p2a.href = links.phase2a;
-  if (p2b) p2b.href = links.phase2b;
+  var p1  = document.getElementById("lp1");
+  var p2a = document.getElementById("lp2a");
+  var p2b = document.getElementById("lp2b");
+  if (p1  && links.phase1)  p1.href  = links.phase1;
+  if (p2a && links.phase2a) p2a.href = links.phase2a;
+  if (p2b && links.phase2b) p2b.href = links.phase2b;
 }
 
 function verify(orderId) {
@@ -288,7 +154,7 @@ function verify(orderId) {
     .then(function(r) { return r.json(); })
     .then(function(data) {
       if (data.success && data.links) {
-        // Payment confirmed — set real links and show downloads
+        // Payment confirmed by Cashfree — show PDFs
         setLinks(data.links);
         show("success");
       } else if ((data.status === "ACTIVE" || data.status === "UNKNOWN") && retries < maxRetries) {
@@ -297,12 +163,10 @@ function verify(orderId) {
         retries++;
         setTimeout(function() { verify(orderId); }, 4000);
       } else {
-        // Payment failed or max retries hit
         show("failed");
       }
     })
-    .catch(function(err) {
-      console.error("Verification error:", err);
+    .catch(function() {
       if (retries < maxRetries) {
         retries++;
         setTimeout(function() { verify(orderId); }, 3000);
@@ -313,16 +177,8 @@ function verify(orderId) {
 }
 
 window.addEventListener("load", function() {
-  var params  = new URLSearchParams(window.location.search);
-  var orderId = params.get("order_id");
-
-  if (!orderId) {
-    // No order_id — someone visited directly without paying
-    show("noorder");
-    return;
-  }
-
-  // Start verification
+  var orderId = new URLSearchParams(window.location.search).get("order_id");
+  if (!orderId) { show("noorder"); return; }
   verify(orderId);
 });
 </script>

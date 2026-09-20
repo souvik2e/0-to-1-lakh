@@ -7,221 +7,143 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
-:root {
-  --white:#ffffff; --off:#fafaf8; --rule:#e8e4dc;
-  --muted:#9a9488; --mid:#6b6560; --ink:#1a1916;
-  --gold:#b8820a; --gold-pale:#fdf6e3; --gold-mid:#e8c96a; --rust:#7a2c0a;
-  --serif:'Instrument Serif',Georgia,serif; --sans:'Inter',system-ui,sans-serif;
+:root{
+  --white:#ffffff;--off:#fafaf8;--rule:#e8e4dc;
+  --muted:#9a9488;--mid:#6b6560;--ink:#1a1916;
+  --gold:#b8820a;--gold-pale:#fdf6e3;--gold-mid:#e8c96a;--rust:#7a2c0a;
+  --serif:'Instrument Serif',Georgia,serif;--sans:'Inter',system-ui,sans-serif;
 }
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
 html{scroll-behavior:smooth;}
-body{font-family:var(--sans);font-weight:400;background:var(--white);
-  color:var(--ink);-webkit-font-smoothing:antialiased;overflow-x:hidden;}
+body{font-family:var(--sans);font-weight:400;background:var(--white);color:var(--ink);-webkit-font-smoothing:antialiased;overflow-x:hidden;}
 
-.annc{background:var(--ink);color:var(--gold-mid);text-align:center;
-  padding:11px 20px;font-size:12px;font-weight:500;letter-spacing:0.04em;}
+.annc{background:var(--ink);color:var(--gold-mid);text-align:center;padding:11px 20px;font-size:12px;font-weight:500;letter-spacing:0.04em;}
 .annc span{color:rgba(255,255,255,0.4);}
-
-nav{background:var(--white);border-bottom:1px solid var(--rule);
-  padding:18px 40px;display:flex;align-items:center;
-  justify-content:space-between;position:sticky;top:0;z-index:100;}
+nav{background:var(--white);border-bottom:1px solid var(--rule);padding:18px 40px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100;}
 .nav-brand{font-family:var(--serif);font-size:18px;color:var(--ink);}
-.nav-cta{background:var(--ink);color:var(--white);padding:10px 24px;
-  font-size:13px;font-weight:500;border:none;cursor:pointer;
-  transition:opacity 0.15s;font-family:var(--sans);}
-.nav-cta:hover{opacity:0.82;}
+.nav-cta{background:var(--ink);color:var(--white);padding:10px 24px;font-size:13px;font-weight:500;border:none;cursor:pointer;transition:opacity .15s;font-family:var(--sans);}
+.nav-cta:hover{opacity:.82;}
 
-.cdbar{background:var(--gold-pale);border-bottom:1px solid var(--gold-mid);
-  padding:13px 40px;text-align:center;display:flex;align-items:center;
-  justify-content:center;gap:18px;flex-wrap:wrap;}
+.cdbar{background:var(--gold-pale);border-bottom:1px solid var(--gold-mid);padding:13px 40px;text-align:center;display:flex;align-items:center;justify-content:center;gap:18px;flex-wrap:wrap;}
 .cd-text{font-size:13px;color:var(--ink);font-weight:500;}
 .cd-units{display:flex;gap:6px;}
 .cd-unit{background:var(--ink);color:var(--white);padding:6px 11px;text-align:center;min-width:50px;}
 .cd-num{font-family:var(--serif);font-size:19px;display:block;line-height:1.1;}
-.cd-lbl{font-size:9px;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.38);}
+.cd-lbl{font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.38);}
 
-.hero{background:var(--off);border-bottom:1px solid var(--rule);
-  padding:90px 40px 80px;text-align:center;position:relative;overflow:hidden;}
-.hero::before{content:'';position:absolute;top:0;left:50%;
-  transform:translateX(-50%);width:600px;height:1px;
-  background:linear-gradient(90deg,transparent,var(--gold),transparent);}
-.hero-eye{display:inline-block;font-size:11px;font-weight:500;
-  letter-spacing:0.18em;color:var(--gold);border:1px solid var(--gold-mid);
-  background:var(--gold-pale);padding:5px 16px;margin-bottom:34px;text-transform:uppercase;}
-.hero-h{font-family:var(--serif);font-size:clamp(48px,8vw,88px);
-  line-height:0.92;letter-spacing:-0.03em;color:var(--ink);margin-bottom:14px;}
+.hero{background:var(--off);border-bottom:1px solid var(--rule);padding:90px 40px 80px;text-align:center;position:relative;overflow:hidden;}
+.hero::before{content:'';position:absolute;top:0;left:50%;transform:translateX(-50%);width:600px;height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent);}
+.hero-eye{display:inline-block;font-size:11px;font-weight:500;letter-spacing:.18em;color:var(--gold);border:1px solid var(--gold-mid);background:var(--gold-pale);padding:5px 16px;margin-bottom:34px;text-transform:uppercase;}
+.hero-h{font-family:var(--serif);font-size:clamp(48px,8vw,88px);line-height:.92;letter-spacing:-.03em;color:var(--ink);margin-bottom:14px;}
 .hero-h em{font-style:italic;color:var(--gold);}
-.hero-sub{font-size:16px;color:var(--mid);line-height:1.75;max-width:520px;
-  margin:0 auto 44px;font-weight:300;}
-.hero-stats{display:flex;justify-content:center;border:1px solid var(--rule);
-  background:var(--white);max-width:720px;margin:0 auto 44px;}
+.hero-sub{font-size:16px;color:var(--mid);line-height:1.75;max-width:520px;margin:0 auto 44px;font-weight:300;}
+.hero-stats{display:flex;justify-content:center;border:1px solid var(--rule);background:var(--white);max-width:720px;margin:0 auto 44px;}
 .hs-item{flex:1;padding:20px 12px;border-right:1px solid var(--rule);text-align:center;}
 .hs-item:last-child{border-right:none;}
 .hs-val{font-family:var(--serif);font-size:24px;color:var(--ink);line-height:1;margin-bottom:5px;display:block;}
 .hs-lbl{font-size:11px;color:var(--muted);line-height:1.4;}
-.btn-main{display:inline-block;background:var(--ink);color:var(--white);
-  padding:17px 48px;font-size:15px;font-weight:500;border:none;
-  cursor:pointer;transition:opacity 0.15s;font-family:var(--sans);}
-.btn-main:hover{opacity:0.85;}
+.btn-main{display:inline-block;background:var(--ink);color:var(--white);padding:17px 48px;font-size:15px;font-weight:500;border:none;cursor:pointer;transition:opacity .15s;font-family:var(--sans);}
+.btn-main:hover{opacity:.85;}
 .hero-note{font-size:12px;color:var(--muted);margin-top:10px;}
 .hero-note strong{color:var(--rust);font-weight:500;}
-.hero-verify{margin-top:22px;font-size:12px;color:var(--muted);
-  display:flex;align-items:center;justify-content:center;gap:8px;}
+.hero-verify{margin-top:22px;font-size:12px;color:var(--muted);display:flex;align-items:center;justify-content:center;gap:8px;}
 .vdot{width:6px;height:6px;border-radius:50%;background:#22c55e;flex-shrink:0;}
 
-.pbar{background:var(--ink);padding:26px 40px;display:flex;
-  align-items:center;justify-content:center;gap:36px;flex-wrap:wrap;}
-.pb-i{text-align:center;color:rgba(255,255,255,0.45);font-size:11px;letter-spacing:0.04em;}
+.pbar{background:var(--ink);padding:26px 40px;display:flex;align-items:center;justify-content:center;gap:36px;flex-wrap:wrap;}
+.pb-i{text-align:center;color:rgba(255,255,255,.45);font-size:11px;letter-spacing:.04em;}
 .pb-n{display:block;font-family:var(--serif);font-size:21px;color:var(--gold-mid);line-height:1;margin-bottom:4px;}
 
 .sec{padding:76px 40px;max-width:860px;margin:0 auto;}
 .sec-rule{border-top:1px solid var(--rule);}
-.sec-title{font-family:var(--serif);font-size:clamp(26px,4.5vw,42px);
-  line-height:1.1;letter-spacing:-0.02em;color:var(--ink);margin-bottom:14px;}
+.sec-title{font-family:var(--serif);font-size:clamp(26px,4.5vw,42px);line-height:1.1;letter-spacing:-.02em;color:var(--ink);margin-bottom:14px;}
 .sec-title em{font-style:italic;color:var(--gold);}
 .sec-sub{font-size:15px;color:var(--mid);line-height:1.8;font-weight:300;max-width:540px;margin-bottom:36px;}
 
-.story-lede{font-family:var(--serif);font-size:clamp(17px,2.8vw,24px);
-  font-style:italic;color:var(--ink);line-height:1.45;
-  border-left:2px solid var(--gold);padding-left:20px;margin-bottom:26px;max-width:640px;}
+.story-lede{font-family:var(--serif);font-size:clamp(17px,2.8vw,24px);font-style:italic;color:var(--ink);line-height:1.45;border-left:2px solid var(--gold);padding-left:20px;margin-bottom:26px;max-width:640px;}
 .story-p{font-size:14px;color:var(--mid);line-height:1.95;margin-bottom:14px;font-weight:300;max-width:660px;}
 .story-p strong{color:var(--ink);font-weight:500;}
-.pull-q{font-family:var(--serif);font-size:clamp(15px,2.4vw,21px);
-  font-style:italic;color:var(--ink);line-height:1.5;
-  border-top:1px solid var(--gold);border-bottom:1px solid var(--gold);padding:16px 0;margin:26px 0;}
+.pull-q{font-family:var(--serif);font-size:clamp(15px,2.4vw,21px);font-style:italic;color:var(--ink);line-height:1.5;border-top:1px solid var(--gold);border-bottom:1px solid var(--gold);padding:16px 0;margin:26px 0;}
 .pull-q span{color:var(--gold);}
-.facts-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;
-  background:var(--rule);border:1px solid var(--rule);margin-top:30px;}
+.facts-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--rule);border:1px solid var(--rule);margin-top:30px;}
 .fg-item{background:var(--off);padding:15px 16px;}
 .fg-lbl{font-size:11px;color:var(--muted);margin-bottom:4px;}
 .fg-val{font-family:var(--serif);font-size:19px;color:var(--ink);line-height:1.1;}
 .fg-note{font-size:11px;color:var(--gold);margin-top:2px;font-style:italic;}
 
 .mistakes-bg{background:var(--off);border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);}
-.mistake{display:grid;grid-template-columns:50px 1fr;gap:20px;
-  padding:26px 0;border-bottom:1px solid var(--rule);align-items:start;}
+.mistake{display:grid;grid-template-columns:50px 1fr;gap:20px;padding:26px 0;border-bottom:1px solid var(--rule);align-items:start;}
 .mistake:last-child{border-bottom:none;}
-.mx{width:40px;height:40px;border:1px solid var(--rule);background:var(--white);
-  display:flex;align-items:center;justify-content:center;font-size:16px;color:var(--rust);}
+.mx{width:40px;height:40px;border:1px solid var(--rule);background:var(--white);display:flex;align-items:center;justify-content:center;font-size:16px;color:var(--rust);}
 .m-title{font-family:var(--serif);font-size:17px;margin-bottom:7px;color:var(--ink);line-height:1.2;}
 .m-body{font-size:13.5px;color:var(--mid);line-height:1.85;font-weight:300;}
 .m-body strong{color:var(--ink);font-weight:500;}
 
-.ch-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;
-  background:var(--rule);border:1px solid var(--rule);margin-top:34px;}
+.ch-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--rule);border:1px solid var(--rule);margin-top:34px;}
 .ch-item{background:var(--white);padding:22px 20px;}
 .ch-item.dark{background:var(--ink);}
-.ch-num{font-family:var(--serif);font-size:11px;color:var(--muted);display:block;margin-bottom:7px;letter-spacing:0.05em;}
-.ch-item.dark .ch-num{color:rgba(255,255,255,0.28);}
+.ch-num{font-family:var(--serif);font-size:11px;color:var(--muted);display:block;margin-bottom:7px;letter-spacing:.05em;}
+.ch-item.dark .ch-num{color:rgba(255,255,255,.28);}
 .ch-title{font-family:var(--serif);font-size:15px;color:var(--ink);line-height:1.3;margin-bottom:9px;}
 .ch-item.dark .ch-title{color:var(--white);}
 .ch-pts{display:flex;flex-direction:column;gap:4px;}
 .ch-pt{font-size:12px;color:var(--mid);padding-left:13px;position:relative;line-height:1.55;}
-.ch-item.dark .ch-pt{color:rgba(255,255,255,0.38);}
+.ch-item.dark .ch-pt{color:rgba(255,255,255,.38);}
 .ch-pt::before{content:'—';position:absolute;left:0;color:var(--gold);font-size:10px;top:2px;}
-.bonus{background:var(--gold-pale);border:1px solid var(--gold-mid);
-  padding:17px 20px;margin-top:12px;display:flex;align-items:flex-start;gap:13px;}
-.bonus-lbl{font-size:11px;font-weight:600;color:var(--gold);text-transform:uppercase;letter-spacing:0.12em;margin-bottom:4px;}
+.bonus{background:var(--gold-pale);border:1px solid var(--gold-mid);padding:17px 20px;margin-top:12px;display:flex;align-items:flex-start;gap:13px;}
+.bonus-lbl{font-size:11px;font-weight:600;color:var(--gold);text-transform:uppercase;letter-spacing:.12em;margin-bottom:4px;}
 .bonus-txt{font-size:13px;color:var(--ink);line-height:1.65;}
 
 .psych-bg{background:var(--ink);padding:76px 40px;}
 .psych-wrap{max-width:860px;margin:0 auto;}
 .psych-grid{display:grid;grid-template-columns:1fr 1fr;gap:42px;margin-top:42px;}
-.psych-n{font-family:var(--serif);font-size:52px;color:rgba(255,255,255,0.05);line-height:1;margin-bottom:-10px;}
+.psych-n{font-family:var(--serif);font-size:52px;color:rgba(255,255,255,.05);line-height:1;margin-bottom:-10px;}
 .psych-title{font-family:var(--serif);font-size:17px;color:var(--white);margin-bottom:8px;line-height:1.2;}
-.psych-body{font-size:13px;color:rgba(255,255,255,0.4);line-height:1.88;font-weight:300;}
+.psych-body{font-size:13px;color:rgba(255,255,255,.4);line-height:1.88;font-weight:300;}
 .psych-body strong{color:var(--gold-mid);font-weight:400;}
-.psych-q{background:rgba(255,255,255,0.04);border-left:2px solid var(--gold);
-  padding:12px 15px;margin-top:11px;font-size:13px;color:rgba(255,255,255,0.58);line-height:1.8;font-style:italic;}
+.psych-q{background:rgba(255,255,255,.04);border-left:2px solid var(--gold);padding:12px 15px;margin-top:11px;font-size:13px;color:rgba(255,255,255,.58);line-height:1.8;font-style:italic;}
 
 .val-row{display:flex;justify-content:space-between;align-items:baseline;padding:12px 0;border-bottom:1px solid var(--rule);font-size:14px;}
 .val-row:last-child{border-bottom:none;}
 .vr-l{color:var(--mid);font-weight:300;}
 .vr-r{font-weight:500;color:var(--muted);text-decoration:line-through;font-size:13px;}
-.val-total{display:flex;justify-content:space-between;align-items:baseline;
-  padding:17px 0;border-top:2px solid var(--ink);border-bottom:2px solid var(--ink);margin-top:4px;}
+.val-total{display:flex;justify-content:space-between;align-items:baseline;padding:17px 0;border-top:2px solid var(--ink);border-bottom:2px solid var(--ink);margin-top:4px;}
 .vt-l{font-size:15px;font-weight:600;color:var(--ink);}
 .vt-r{font-family:var(--serif);font-size:34px;color:var(--ink);}
 
-/* ── PRICING SECTION ── */
+/* ── BUY SECTION ── */
 .price-bg{background:var(--off);border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);padding:76px 40px;}
-.price-wrap{max-width:580px;margin:0 auto;text-align:center;}
-.price-badge{display:inline-block;background:var(--rust);color:var(--white);
-  font-size:11px;font-weight:600;padding:5px 16px;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:17px;}
-.price-big{font-family:var(--serif);font-size:80px;color:var(--ink);line-height:1;letter-spacing:-0.03em;margin-bottom:4px;}
+.price-wrap{max-width:560px;margin:0 auto;text-align:center;}
+.price-badge{display:inline-block;background:var(--rust);color:var(--white);font-size:11px;font-weight:600;padding:5px 16px;letter-spacing:.1em;text-transform:uppercase;margin-bottom:17px;}
+.price-big{font-family:var(--serif);font-size:80px;color:var(--ink);line-height:1;letter-spacing:-.03em;margin-bottom:4px;}
 .price-was{font-size:16px;color:var(--muted);text-decoration:line-through;margin-bottom:17px;}
-.price-desc{font-size:14px;color:var(--mid);line-height:1.8;margin-bottom:28px;font-weight:300;}
+.price-desc{font-size:14px;color:var(--mid);line-height:1.8;margin-bottom:24px;font-weight:300;}
 
-.includes{display:grid;grid-template-columns:1fr 1fr;gap:0;
-  border:1px solid var(--rule);background:var(--rule);margin:0 0 24px;text-align:left;}
-.inc-item{background:var(--white);padding:10px 13px;font-size:12px;
-  color:var(--mid);display:flex;align-items:center;gap:7px;}
+.includes{display:grid;grid-template-columns:1fr 1fr;border:1px solid var(--rule);background:var(--rule);margin-bottom:22px;text-align:left;}
+.inc-item{background:var(--white);padding:10px 13px;font-size:12px;color:var(--mid);display:flex;align-items:center;gap:7px;}
 .inc-tick{color:#22c55e;font-weight:700;flex-shrink:0;}
 
-/* ── THE PAYMENT FLOW BOX ── */
-.pay-flow-box{background:var(--white);border:1px solid var(--rule);padding:24px;margin-bottom:0;}
-.pf-title{font-size:13px;font-weight:500;color:var(--ink);
-  text-transform:uppercase;letter-spacing:0.1em;margin-bottom:18px;text-align:left;}
+/* FORM */
+.form-box{background:var(--white);border:1px solid var(--rule);padding:22px;margin-bottom:16px;text-align:left;}
+.form-title{font-size:12px;font-weight:500;color:var(--ink);text-transform:uppercase;letter-spacing:.1em;margin-bottom:14px;}
+.form-row{margin-bottom:12px;}
+.form-row:last-child{margin-bottom:0;}
+.form-lbl{font-size:12px;color:var(--mid);display:block;margin-bottom:4px;}
+.form-req{color:var(--rust);}
+.form-inp{width:100%;padding:11px 13px;border:1px solid var(--rule);background:var(--white);font-size:14px;color:var(--ink);font-family:var(--sans);outline:none;transition:border-color .15s;}
+.form-inp:focus{border-color:var(--ink);}
+.form-err{font-size:11px;color:var(--rust);display:none;margin-top:3px;}
+.form-err.show{display:block;}
 
-/* Step indicators */
-.pay-steps{display:flex;flex-direction:column;gap:0;margin-bottom:22px;text-align:left;}
-.pay-step{display:flex;gap:14px;padding:11px 0;border-bottom:1px solid var(--rule);align-items:flex-start;}
-.pay-step:last-child{border-bottom:none;}
-.ps-num{width:24px;height:24px;border-radius:50%;background:var(--ink);color:var(--white);
-  display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:600;flex-shrink:0;margin-top:1px;}
-.ps-title{font-size:13px;font-weight:500;color:var(--ink);margin-bottom:2px;}
-.ps-desc{font-size:12px;color:var(--muted);line-height:1.6;}
+.btn-pay{display:block;background:var(--ink);color:var(--white);padding:19px 40px;font-size:16px;font-weight:500;border:none;cursor:pointer;width:100%;text-align:center;transition:opacity .15s;font-family:var(--sans);letter-spacing:.02em;}
+.btn-pay:hover{opacity:.85;}
+.btn-pay:disabled{opacity:.55;cursor:wait;}
 
-/* Email input before payment */
-.email-row{display:flex;flex-direction:column;gap:6px;margin-bottom:16px;text-align:left;}
-.email-lbl{font-size:12px;color:var(--mid);}
-.email-lbl span{color:var(--rust);}
-.email-input{width:100%;padding:11px 13px;border:1px solid var(--rule);
-  background:var(--white);font-size:14px;color:var(--ink);
-  font-family:var(--sans);outline:none;transition:border-color 0.15s;}
-.email-input:focus{border-color:var(--ink);}
-.email-error{font-size:11px;color:var(--rust);display:none;}
-.email-error.show{display:block;}
-
-/* Cashfree pay button — styled to match site */
-.cf-pay-wrap{display:block;width:100%;}
-.cf-btn{
-  display:flex;align-items:center;justify-content:center;gap:12px;
-  width:100%;background:var(--ink);color:var(--white);
-  padding:18px 20px;border:none;cursor:pointer;
-  font-family:var(--sans);font-size:16px;font-weight:500;
-  letter-spacing:0.02em;transition:opacity 0.15s;text-decoration:none;
-}
-.cf-btn:hover{opacity:0.85;}
-.cf-btn img{width:22px;height:22px;filter:brightness(0) invert(1);}
-.cf-btn-text{display:flex;flex-direction:column;align-items:flex-start;}
-.cf-btn-main{font-size:15px;font-weight:500;color:var(--white);}
-.cf-btn-sub{font-size:10px;color:rgba(255,255,255,0.5);margin-top:1px;}
-
-.pay-note-small{font-size:11px;color:var(--muted);text-align:center;margin-top:12px;line-height:1.7;}
-
-.guarantee{display:flex;align-items:flex-start;gap:13px;
-  background:var(--white);border:1px solid var(--rule);
-  padding:15px 18px;margin-top:16px;text-align:left;}
+.guarantee{display:flex;align-items:flex-start;gap:13px;background:var(--white);border:1px solid var(--rule);padding:15px 18px;margin-top:16px;text-align:left;}
 .g-icon{font-size:20px;flex-shrink:0;}
 .g-title{font-size:13px;font-weight:500;color:var(--ink);margin-bottom:3px;}
 .g-body{font-size:12px;color:var(--muted);line-height:1.65;}
-
-/* ACCESS BOX — shown after user clicks "I have paid" */
-.access-box{display:none;background:var(--gold-pale);border:1px solid var(--gold-mid);
-  padding:20px;margin-top:16px;text-align:left;}
-.ab-title{font-size:13px;font-weight:500;color:var(--gold);margin-bottom:10px;
-  text-transform:uppercase;letter-spacing:0.1em;}
-.ab-desc{font-size:12px;color:var(--mid);line-height:1.75;margin-bottom:14px;}
-.ab-input{width:100%;padding:10px 12px;border:1px solid var(--rule);
-  background:var(--white);font-size:14px;color:var(--ink);
-  font-family:var(--sans);outline:none;margin-bottom:10px;}
-.ab-btn{width:100%;background:var(--gold);color:var(--ink);padding:13px;
-  font-size:14px;font-weight:600;border:none;cursor:pointer;
-  font-family:var(--sans);transition:opacity 0.15s;}
-.ab-btn:hover{opacity:0.85;}
-.ab-error{font-size:12px;color:var(--rust);display:none;margin-top:6px;}
-.ab-error.show{display:block;}
+.pay-note{margin-top:14px;font-size:12px;color:var(--muted);text-align:center;line-height:1.85;}
+.pay-note strong{color:var(--mid);}
 
 .faq-item{border-bottom:1px solid var(--rule);padding:19px 0;}
 .faq-q{font-family:var(--serif);font-size:16px;color:var(--ink);margin-bottom:9px;line-height:1.3;}
@@ -229,22 +151,15 @@ nav{background:var(--white);border-bottom:1px solid var(--rule);
 .faq-a strong{color:var(--ink);font-weight:500;}
 
 .final{background:var(--ink);padding:96px 40px;text-align:center;position:relative;}
-.final::before{content:'';position:absolute;top:0;left:50%;transform:translateX(-50%);
-  width:300px;height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent);}
-.final-h{font-family:var(--serif);font-size:clamp(34px,6vw,60px);color:var(--white);
-  line-height:1.05;letter-spacing:-0.02em;margin-bottom:14px;}
+.final::before{content:'';position:absolute;top:0;left:50%;transform:translateX(-50%);width:300px;height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent);}
+.final-h{font-family:var(--serif);font-size:clamp(34px,6vw,60px);color:var(--white);line-height:1.05;letter-spacing:-.02em;margin-bottom:14px;}
 .final-h em{font-style:italic;color:var(--gold-mid);}
-.final-sub{font-size:15px;color:rgba(255,255,255,0.36);margin-bottom:34px;font-weight:300;
-  max-width:430px;margin-left:auto;margin-right:auto;line-height:1.8;}
-.btn-final{display:inline-block;background:var(--white);color:var(--ink);
-  padding:17px 52px;font-size:15px;font-weight:600;cursor:pointer;
-  border:none;transition:opacity 0.15s;font-family:var(--sans);}
-.btn-final:hover{opacity:0.88;}
-.final-note{font-size:12px;color:rgba(255,255,255,0.2);margin-top:12px;}
+.final-sub{font-size:15px;color:rgba(255,255,255,.36);margin-bottom:34px;font-weight:300;max-width:430px;margin-left:auto;margin-right:auto;line-height:1.8;}
+.btn-final{display:inline-block;background:var(--white);color:var(--ink);padding:17px 52px;font-size:15px;font-weight:600;cursor:pointer;border:none;transition:opacity .15s;font-family:var(--sans);}
+.btn-final:hover{opacity:.88;}
+.final-note{font-size:12px;color:rgba(255,255,255,.2);margin-top:12px;}
 
-footer{background:var(--off);border-top:1px solid var(--rule);
-  padding:28px 40px;display:flex;justify-content:space-between;
-  align-items:center;flex-wrap:wrap;gap:12px;}
+footer{background:var(--off);border-top:1px solid var(--rule);padding:28px 40px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;}
 .ft-brand{font-family:var(--serif);font-size:16px;color:var(--ink);}
 .ft-info{font-size:12px;color:var(--muted);text-align:right;line-height:1.8;}
 
@@ -265,15 +180,11 @@ footer{background:var(--off);border-top:1px solid var(--rule);
 </head>
 <body>
 
-<div class="annc">
-  🔥 Launch price ends September 21 &nbsp;—&nbsp;
-  <strong style="color:var(--gold-mid);">₹299 today, ₹599 after.</strong>
-  <span>&nbsp;No exceptions.</span>
-</div>
+<div class="annc">🔥 Launch price ends September 21 &nbsp;—&nbsp;<strong style="color:var(--gold-mid);">₹299 today, ₹599 after.</strong><span>&nbsp;No exceptions.</span></div>
 
 <nav>
   <div class="nav-brand">Creator Blueprint</div>
-  <button class="nav-cta" onclick="document.getElementById('buy').scrollIntoView({behavior:'smooth'})">Get the Guide — ₹299</button>
+  <button class="nav-cta" onclick="goToBuy()">Get the Guide — ₹299</button>
 </nav>
 
 <div class="cdbar" id="cd-wrap">
@@ -296,17 +207,14 @@ footer{background:var(--off);border-top:1px solid var(--rule);
     <div class="hs-item"><span class="hs-val">1,000+</span><span class="hs-lbl">New followers every day</span></div>
     <div class="hs-item"><span class="hs-val">₹0</span><span class="hs-lbl">Budget. Zero ads ever.</span></div>
   </div>
-  <button class="btn-main" onclick="document.getElementById('buy').scrollIntoView({behavior:'smooth'})">Get the Blueprint — ₹299</button>
-  <div class="hero-note" style="margin-top:10px;"><strong>Price becomes ₹599 on September 21.</strong> Instant PDF access after payment.</div>
-  <div class="hero-verify">
-    <span class="vdot"></span>
-    <span>Verify live — open @pallabimondal_ on Instagram and see the growth happening right now.</span>
-  </div>
+  <button class="btn-main" onclick="goToBuy()">Get the Blueprint — ₹299</button>
+  <div class="hero-note" style="margin-top:10px;"><strong>Price becomes ₹599 on September 21.</strong> PDF delivered instantly after payment.</div>
+  <div class="hero-verify"><span class="vdot"></span><span>Verify live — open @pallabimondal_ on Instagram and see the growth happening right now.</span></div>
 </section>
 
 <div class="pbar">
   <div class="pb-i"><span class="pb-n">91 days</span>zero to 1 lakh</div>
-  <div class="pb-i"><span class="pb-n">150M+</span>total reach generated</div>
+  <div class="pb-i"><span class="pb-n">150M+</span>total reach</div>
   <div class="pb-i"><span class="pb-n">1,000+</span>new followers daily</div>
   <div class="pb-i"><span class="pb-n">3.9M</span>views on one reel</div>
   <div class="pb-i"><span class="pb-n">₹0</span>budget. zero ads.</div>
@@ -315,16 +223,16 @@ footer{background:var(--off);border-top:1px solid var(--rule);
 <section class="sec sec-rule">
   <div class="sec-title">The story nobody<br>talks about <em>honestly</em></div>
   <div class="story-lede">"I was 20 years old. No experience. No money. My sister wanted to grow on Instagram — I said I'd figure it out. I had absolutely no idea what I was getting into."</div>
-  <p class="story-p">Month 1 was a disaster. I posted 7 reels in one day trying to grow faster — and watched our reach collapse from 17 million to 13 million overnight. I sent pitch emails to big brands with zero proof and got complete silence. I had no system, no posting schedule, no understanding of why some reels crossed 500K views and others died at 8K.</p>
-  <p class="story-p">Then I stopped guessing and started studying. I analysed every reel that worked and every one that didn't — until I understood exactly what separated them. I tested posting times until I found slots nobody else was using. I built a system out of everything that worked and removed everything that didn't.</p>
-  <p class="story-p"><strong>Today @pallabimondal_ crosses 1,000 new followers every single day — without posting anything new, without paid ads, just the algorithm pushing her content because the system is working.</strong> 150 million+ total reach. 1 lakh followers in 91 days. Still growing right now as you read this.</p>
+  <p class="story-p">Month 1 was a disaster. I posted 7 reels in one day trying to grow faster — and watched our reach collapse from 17 million to 13 million overnight. I sent pitch emails to big brands with zero proof and got complete silence.</p>
+  <p class="story-p">Then I stopped guessing and started studying. I analysed every reel that worked and every one that didn't — until I understood exactly what separated them. I built a system out of everything that worked and removed everything that didn't.</p>
+  <p class="story-p"><strong>Today @pallabimondal_ crosses 1,000 new followers every single day — without paid ads, just the algorithm pushing her content because the system is working.</strong> 150 million+ total reach. 1 lakh followers in 91 days.</p>
   <div class="pull-q">"The account is growing <span>while I sleep.</span> While I study in Chennai. While I do nothing. That is what a system does — it runs without you."</div>
   <div class="facts-grid">
     <div class="fg-item"><div class="fg-lbl">Where we started</div><div class="fg-val">0 followers</div><div class="fg-note">Zero. From absolute scratch.</div></div>
     <div class="fg-item"><div class="fg-lbl">Where it reached</div><div class="fg-val">1 Lakh+</div><div class="fg-note">Growing every single day.</div></div>
     <div class="fg-item"><div class="fg-lbl">Time taken</div><div class="fg-val">91 days</div><div class="fg-note">Three months. One system.</div></div>
-    <div class="fg-item"><div class="fg-lbl">Budget spent</div><div class="fg-val">₹0</div><div class="fg-note">No ads. No promotions. Nothing.</div></div>
-    <div class="fg-item"><div class="fg-lbl">Total reach generated</div><div class="fg-val">150M+</div><div class="fg-note">Real views. Still growing.</div></div>
+    <div class="fg-item"><div class="fg-lbl">Budget spent</div><div class="fg-val">₹0</div><div class="fg-note">No ads. No promotions.</div></div>
+    <div class="fg-item"><div class="fg-lbl">Total reach</div><div class="fg-val">150M+</div><div class="fg-note">Real views. Still growing.</div></div>
     <div class="fg-item"><div class="fg-lbl">New followers daily</div><div class="fg-val">1,000+</div><div class="fg-note">On autopilot. Every day.</div></div>
   </div>
 </section>
@@ -332,28 +240,10 @@ footer{background:var(--off);border-top:1px solid var(--rule);
 <div class="mistakes-bg">
   <div class="sec">
     <div class="sec-title">The 3 mistakes that cost<br>us <em>weeks</em> of recovery</div>
-    <p class="sec-sub">I made every mistake so you don't have to. These three are the most common among Bengali creators.</p>
-    <div class="mistake">
-      <div class="mx">✗</div>
-      <div>
-        <div class="m-title">Posting more than 1 reel per day</div>
-        <p class="m-body">Instagram gives every account one daily distribution budget. Post 7 reels and that budget splits 7 ways. <strong>Our views collapsed overnight. Recovery took 14 days of strict discipline.</strong></p>
-      </div>
-    </div>
-    <div class="mistake">
-      <div class="mx">✗</div>
-      <div>
-        <div class="m-title">Pitching big brands before having proof</div>
-        <p class="m-body">Brand managers open your profile immediately after reading your email. <strong>If your recent reels show weak views, your email goes to trash</strong> — regardless of your all-time stats.</p>
-      </div>
-    </div>
-    <div class="mistake">
-      <div class="mx">✗</div>
-      <div>
-        <div class="m-title">Ignoring the 2-second hook</div>
-        <p class="m-body">50% of viewers left in the first 2 seconds. We were opening with a static face and music — the most skipped opening on Instagram. <strong>High skip rate signals the algorithm to stop distribution.</strong></p>
-      </div>
-    </div>
+    <p class="sec-sub">I made every mistake so you don't have to. These are the most common among Bengali creators.</p>
+    <div class="mistake"><div class="mx">✗</div><div><div class="m-title">Posting more than 1 reel per day</div><p class="m-body">Instagram gives every account one daily distribution budget. Post 7 reels and that budget splits 7 ways. <strong>Our views collapsed overnight. Recovery took 14 days of strict discipline.</strong></p></div></div>
+    <div class="mistake"><div class="mx">✗</div><div><div class="m-title">Pitching big brands before having proof</div><p class="m-body">Brand managers open your profile right after reading your email. <strong>If your recent reels show weak views, your email goes to trash</strong> — regardless of all-time stats. We wasted an entire month doing this backwards.</p></div></div>
+    <div class="mistake"><div class="mx">✗</div><div><div class="m-title">Ignoring the 2-second hook</div><p class="m-body">50% of viewers left in the first 2 seconds. <strong>High skip rate signals the algorithm to stop distribution.</strong> One hook change fixed this permanently.</p></div></div>
   </div>
 </div>
 
@@ -362,29 +252,23 @@ footer{background:var(--off);border-top:1px solid var(--rule);
   <p class="sec-sub">8 chapters. Real strategies. Real templates. Formatted so you implement immediately.</p>
   <div class="ch-grid">
     <div class="ch-item dark"><span class="ch-num">Chapter 01</span><div class="ch-title">The real story — every mistake documented</div><div class="ch-pts"><div class="ch-pt">Why Month 1 failed and what changed</div><div class="ch-pt">The 7-reel collapse and 14-day recovery</div><div class="ch-pt">The 4:45 AM discovery that crossed 100K</div></div></div>
-    <div class="ch-item"><span class="ch-num">Chapter 02</span><div class="ch-title">The content formula that drives millions</div><div class="ch-pts"><div class="ch-pt">Emotion + Entertainment + Education</div><div class="ch-pt">The 3.9M view reel — line by line breakdown</div><div class="ch-pt">The save trigger that changes reach overnight</div></div></div>
+    <div class="ch-item"><span class="ch-num">Chapter 02</span><div class="ch-title">The content formula that drives millions</div><div class="ch-pts"><div class="ch-pt">Emotion + Entertainment + Education</div><div class="ch-pt">The 3.9M view reel — line by line</div><div class="ch-pt">The save trigger that changes reach overnight</div></div></div>
     <div class="ch-item"><span class="ch-num">Chapter 03</span><div class="ch-title">How the algorithm actually works</div><div class="ch-pts"><div class="ch-pt">The 3-point checklist before every post</div><div class="ch-pt">4:45 AM, 5:15 PM, 10:30 PM — why these work</div><div class="ch-pt">The 7–9 PM trap killing Bengali creator reach</div></div></div>
     <div class="ch-item dark"><span class="ch-num">Chapter 04</span><div class="ch-title">5 hook formulas that stop the scroll</div><div class="ch-pts"><div class="ch-pt">All 5 types — Bengali + Hindi examples</div><div class="ch-pt">Colour psychology — bright pink loses 25%</div><div class="ch-pt">The ₹0 studio setup that looks professional</div></div></div>
-    <div class="ch-item"><span class="ch-num">Chapter 05</span><div class="ch-title">Captions and hashtags that drive saves</div><div class="ch-pts"><div class="ch-pt">5-part caption formula + 5 copy-paste templates</div><div class="ch-pt">5 hashtag sets to rotate — never repeat</div><div class="ch-pt">The save CTA that produced 2.4% save rate</div></div></div>
+    <div class="ch-item"><span class="ch-num">Chapter 05</span><div class="ch-title">Captions and hashtags that drive saves</div><div class="ch-pts"><div class="ch-pt">5-part formula + 5 copy-paste templates</div><div class="ch-pt">5 hashtag sets to rotate — never repeat</div><div class="ch-pt">The save CTA that produced 2.4% save rate</div></div></div>
     <div class="ch-item dark"><span class="ch-num">Chapter 06</span><div class="ch-title">Brand deals — getting paid under 1 lakh</div><div class="ch-pts"><div class="ch-pt">3-tier strategy with specific brand names</div><div class="ch-pt">3 pitch templates — copy, personalise, send</div><div class="ch-pt">Full rate card from 10K to 5L followers</div></div></div>
     <div class="ch-item dark"><span class="ch-num">Chapter 07</span><div class="ch-title">The manager system — run as a business</div><div class="ch-pts"><div class="ch-pt">Daily 6 PM check-in prevents reach collapse</div><div class="ch-pt">Find a video editor for ₹0</div><div class="ch-pt">Month 1 to Month 4+ income roadmap</div></div></div>
-    <div class="ch-item"><span class="ch-num">Chapter 08</span><div class="ch-title">Affiliate stacking — passive income</div><div class="ch-pts"><div class="ch-pt">5 programmes — complete setup in 60 minutes</div><div class="ch-pt">Linktree guide — exact link order</div><div class="ch-pt">Month 1, 3, 6 income projections</div></div></div>
+    <div class="ch-item"><span class="ch-num">Chapter 08</span><div class="ch-title">Affiliate stacking — passive income</div><div class="ch-pts"><div class="ch-pt">5 programmes — complete setup in 60 mins</div><div class="ch-pt">Linktree guide — exact link order</div><div class="ch-pt">Month 1, 3, 6 income projections</div></div></div>
   </div>
-  <div class="bonus" style="margin-top:12px;">
-    <div style="font-size:22px;flex-shrink:0;">🎁</div>
-    <div><div class="bonus-lbl">3 Bonuses Included Free</div><div class="bonus-txt">5 ready-to-post Bengali + Hindi captions · 5 hashtag rotation sets · All 3 brand pitch email templates · The milestone email that re-opens ignored brands</div></div>
-  </div>
+  <div class="bonus" style="margin-top:12px;"><div style="font-size:22px;flex-shrink:0;">🎁</div><div><div class="bonus-lbl">3 Bonuses Included Free</div><div class="bonus-txt">5 Bengali + Hindi captions · 5 hashtag rotation sets · All 3 brand pitch templates · Milestone email that re-opens ignored brands</div></div></div>
 </section>
 
 <div class="psych-bg">
   <div class="psych-wrap">
-    <div style="max-width:520px;">
-      <div class="sec-title" style="color:var(--white);margin-bottom:10px;">Why ₹299 is not the question.<br><em>This is the question.</em></div>
-      <p style="font-size:14px;color:rgba(255,255,255,0.36);line-height:1.85;font-weight:300;">Six months from today — where will you be?</p>
-    </div>
+    <div style="max-width:520px;"><div class="sec-title" style="color:var(--white);margin-bottom:10px;">Why ₹299 is not the question.<br><em>This is the question.</em></div><p style="font-size:14px;color:rgba(255,255,255,.36);line-height:1.85;font-weight:300;">Six months from today — where will you be?</p></div>
     <div class="psych-grid">
       <div><div class="psych-n">01</div><div class="psych-title">One brand deal returns 16x this guide's price</div><p class="psych-body"><strong>The smallest brand deal for a 1 lakh creator pays ₹5,000–8,000.</strong> That is 17x the cost of this guide from a single use of one chapter.</p><div class="psych-q">"Ekta brand deal theke ₹5,000. Ei guide ₹299."</div></div>
-      <div><div class="psych-n">02</div><div class="psych-title">The proof is live — verify before you pay</div><p class="psych-body"><strong>@pallabimondal_ is a live Instagram account anyone can open right now.</strong> Not a claim. A public record. Open it before you decide.</p><div class="psych-q">Open @pallabimondal_. See the follower count. Now decide.</div></div>
+      <div><div class="psych-n">02</div><div class="psych-title">The proof is live — verify before you pay</div><p class="psych-body"><strong>@pallabimondal_ is a live account anyone can open right now.</strong> Not a claim. A public record. Open it before you decide.</p><div class="psych-q">Open @pallabimondal_. See the follower count. Now decide.</div></div>
       <div><div class="psych-n">03</div><div class="psych-title">Without a system, nothing changes in 6 months</div><p class="psych-body">Most creators are in the exact same position 6 months from now. <strong>The system in this guide changes the trajectory in Week 1.</strong></p><div class="psych-q">"Tumi jodi ager moto random reel post korte thako — 6 maas por o same jagay thakbe."</div></div>
       <div><div class="psych-n">04</div><div class="psych-title">This price will not come back after September 21</div><p class="psych-body"><strong>September 21, it becomes ₹599 permanently.</strong> No discount code. No second chance. The deadline is real.</p><div class="psych-q">"September 21 e price badte pare. Ki korbe?"</div></div>
     </div>
@@ -405,93 +289,53 @@ footer{background:var(--off);border-top:1px solid var(--rule);
   <div class="val-total"><span class="vt-l">Total value</span><span class="vt-r">₹4,193</span></div>
   <div style="text-align:center;margin-top:24px;">
     <div style="font-size:13px;color:var(--muted);margin-bottom:5px;">You pay today</div>
-    <div style="font-family:var(--serif);font-size:58px;color:var(--ink);line-height:1;letter-spacing:-0.02em;">₹299</div>
+    <div style="font-family:var(--serif);font-size:58px;color:var(--ink);line-height:1;letter-spacing:-.02em;">₹299</div>
     <div style="font-size:12px;color:var(--muted);margin-top:6px;margin-bottom:20px;">Until September 21 only</div>
-    <button class="btn-main" onclick="document.getElementById('buy').scrollIntoView({behavior:'smooth'})">Get instant access</button>
+    <button class="btn-main" onclick="goToBuy()">Get instant access</button>
   </div>
 </section>
 
-<!-- ══ BUY SECTION ══ -->
+<!-- ══ BUY ══ -->
 <div class="price-bg" id="buy">
   <div class="price-wrap">
     <div class="price-badge">Launch price · Until September 21</div>
     <div class="price-big">₹299</div>
     <div class="price-was">₹599 after September 21</div>
-    <p class="price-desc">One-time payment. Instant PDF access. All 8 chapters, all templates, all scripts — yours forever. No subscription. No expiry.</p>
+    <p class="price-desc">One-time payment. PDF delivered to your email instantly after Cashfree confirms payment. No subscription. No expiry.</p>
 
     <div class="includes">
-      <div class="inc-item"><span class="inc-tick">✓</span> 8-chapter PDF guide (all phases)</div>
-      <div class="inc-item"><span class="inc-tick">✓</span> 5 Bengali + Hindi captions</div>
-      <div class="inc-item"><span class="inc-tick">✓</span> 5 hashtag rotation sets</div>
-      <div class="inc-item"><span class="inc-tick">✓</span> 3 brand pitch templates</div>
-      <div class="inc-item"><span class="inc-tick">✓</span> Full rate card (10K–5L)</div>
-      <div class="inc-item"><span class="inc-tick">✓</span> Affiliate setup guide</div>
-      <div class="inc-item"><span class="inc-tick">✓</span> Milestone email template</div>
-      <div class="inc-item"><span class="inc-tick">✓</span> Instant access after payment</div>
+      <div class="inc-item"><span class="inc-tick">✓</span>8-chapter PDF guide (all phases)</div>
+      <div class="inc-item"><span class="inc-tick">✓</span>5 Bengali + Hindi captions</div>
+      <div class="inc-item"><span class="inc-tick">✓</span>5 hashtag rotation sets</div>
+      <div class="inc-item"><span class="inc-tick">✓</span>3 brand pitch templates</div>
+      <div class="inc-item"><span class="inc-tick">✓</span>Full rate card (10K–5L)</div>
+      <div class="inc-item"><span class="inc-tick">✓</span>Affiliate setup guide</div>
+      <div class="inc-item"><span class="inc-tick">✓</span>Milestone email template</div>
+      <div class="inc-item"><span class="inc-tick">✓</span>Instant email delivery after payment</div>
     </div>
 
-    <!-- PAYMENT FLOW -->
-    <div class="pay-flow-box">
-      <div class="pf-title">Complete your purchase</div>
-
-      <div class="pay-steps">
-        <div class="pay-step">
-          <div class="ps-num">1</div>
-          <div><div class="ps-title">Enter your email</div><div class="ps-desc">So we can send you the access link as backup.</div></div>
-        </div>
-        <div class="pay-step">
-          <div class="ps-num">2</div>
-          <div><div class="ps-title">Click "Pay ₹299"</div><div class="ps-desc">You'll go to Cashfree's secure payment page. Pay via UPI, card, or net banking.</div></div>
-        </div>
-        <div class="pay-step">
-          <div class="ps-num">3</div>
-          <div><div class="ps-title">Return here after payment</div><div class="ps-desc">Click "I have paid — show my PDFs" and enter the email you used. We verify and unlock instantly.</div></div>
-        </div>
+    <!-- ── FORM ── -->
+    <div class="form-box">
+      <div class="form-title">Enter your details to pay</div>
+      <div class="form-row">
+        <label class="form-lbl" for="f-name">Full name</label>
+        <input class="form-inp" type="text" id="f-name" placeholder="Your name" autocomplete="name">
       </div>
-
-      <!-- Step 1: Email -->
-      <div class="email-row">
-        <label class="email-lbl" for="buyer-email">Your email address <span>*</span></label>
-        <input class="email-input" type="email" id="buyer-email" placeholder="your@email.com" autocomplete="email">
-        <span class="email-error" id="email-err">Please enter a valid email address.</span>
+      <div class="form-row">
+        <label class="form-lbl" for="f-email">Email address <span class="form-req">*</span></label>
+        <input class="form-inp" type="email" id="f-email" placeholder="your@email.com" autocomplete="email">
+        <span class="form-err" id="err-email">Please enter a valid email address.</span>
       </div>
-
-      <!-- Step 2: Pay button styled like site -->
-      <a href="https://payments.cashfree.com/forms/0to1lakh" target="_blank" class="cf-pay-wrap" id="cf-link" onclick="return handlePayClick()">
-        <div class="cf-btn">
-          <img src="https://cashfreelogo.cashfree.com/assets_images/cfbrand/cf_logo.svg" alt="Cashfree">
-          <div class="cf-btn-text">
-            <span class="cf-btn-main">Pay ₹299 securely</span>
-            <span class="cf-btn-sub">Powered by Cashfree · UPI / Card / Net Banking</span>
-          </div>
-        </div>
-      </a>
-
-      <div class="pay-note-small">
-        ↑ You will be taken to Cashfree's secure payment page. After paying, come back here and click below.
+      <div class="form-row">
+        <label class="form-lbl" for="f-phone">Mobile number <span class="form-req">*</span></label>
+        <input class="form-inp" type="tel" id="f-phone" placeholder="10-digit number" maxlength="10">
+        <span class="form-err" id="err-phone">Please enter a valid 10-digit mobile number.</span>
       </div>
-
-      <!-- Step 3: After payment — unlock PDFs -->
-      <div style="margin-top:20px;padding-top:18px;border-top:1px solid var(--rule);">
-        <button onclick="showAccessBox()" style="width:100%;background:var(--off);color:var(--mid);
-          border:1px solid var(--rule);padding:13px;font-size:14px;font-weight:500;
-          cursor:pointer;font-family:var(--sans);transition:all 0.15s;"
-          onmouseover="this.style.borderColor='var(--ink)';this.style.color='var(--ink)'"
-          onmouseout="this.style.borderColor='var(--rule)';this.style.color='var(--mid)'">
-          ✓ &nbsp;I have paid — show my PDFs
-        </button>
-      </div>
-
-      <!-- ACCESS BOX — shown after user clicks "I have paid" -->
-      <div class="access-box" id="access-box">
-        <div class="ab-title">Enter your payment email to access PDFs</div>
-        <div class="ab-desc">Enter the email address you used when paying. We verify it against confirmed payments and unlock your downloads instantly.</div>
-        <input class="ab-input" type="email" id="access-email" placeholder="Email you paid with">
-        <button class="ab-btn" onclick="verifyAccess()">Verify & Unlock My PDFs →</button>
-        <div class="ab-error" id="access-error">Email not found in confirmed payments. If you just paid, wait 2 minutes and try again. Still having trouble? DM @souvikk_09 on Instagram.</div>
-      </div>
-
     </div>
+
+    <button class="btn-pay" id="pay-btn" onclick="startPayment()">
+      Pay ₹299 — Get Instant Access
+    </button>
 
     <div class="guarantee">
       <div class="g-icon">🛡️</div>
@@ -501,8 +345,9 @@ footer{background:var(--off);border-top:1px solid var(--rule);
       </div>
     </div>
 
-    <div style="margin-top:14px;font-size:12px;color:var(--muted);text-align:center;line-height:1.85;">
+    <div class="pay-note">
       Secure payment via Cashfree · UPI, Cards, Net Banking<br>
+      PDF links sent to your email the moment payment clears<br>
       Questions? DM <strong>@souvikk_09</strong> on Instagram
     </div>
   </div>
@@ -511,11 +356,11 @@ footer{background:var(--off);border-top:1px solid var(--rule);
 <section class="sec sec-rule">
   <div class="sec-title">Questions you're<br>probably asking</div>
   <div style="margin-top:18px;">
+    <div class="faq-item"><div class="faq-q">How do I receive the PDFs after paying?</div><p class="faq-a">The moment Cashfree confirms your payment, you are automatically redirected to a download page where all 3 PDFs are available. You also receive an email with the download links within seconds. If there is any issue, DM <strong>@souvikk_09</strong> on Instagram.</p></div>
     <div class="faq-item"><div class="faq-q">Is this for creators or managers?</div><p class="faq-a">Both. Creators use it to understand the system. Managers use it as the complete operating manual. If you are managing yourself, you can implement both roles simultaneously.</p></div>
-    <div class="faq-item"><div class="faq-q">I have 0 followers right now. Will this work?</div><p class="faq-a"><strong>This is exactly where it is most useful.</strong> Everything was built from zero. Every strategy is designed for the growth phase. Starting from zero means no bad habits to unlearn.</p></div>
+    <div class="faq-item"><div class="faq-q">I have 0 followers right now. Will this work?</div><p class="faq-a"><strong>This is exactly where it is most useful.</strong> Everything was built from zero. Every strategy is designed for the growth phase.</p></div>
     <div class="faq-item"><div class="faq-q">Does this only work for Bengali emotional content?</div><p class="faq-a">The algorithm strategy, hook formulas, brand deal templates, and affiliate setup work for any Indian creator in any niche. Bengali-specific elements are clearly labelled and easy to adapt to Hindi.</p></div>
-    <div class="faq-item"><div class="faq-q">How do I access the PDFs after paying?</div><p class="faq-a">After paying on Cashfree, return to this page and click "I have paid — show my PDFs." Enter the email you used. We verify and unlock the download links immediately. If there is any issue, DM <strong>@souvikk_09</strong> on Instagram.</p></div>
-    <div class="faq-item"><div class="faq-q">Why does the price go up on September 21?</div><p class="faq-a">₹299 is the launch price for people who act quickly. September 21 is a real hard deadline — ₹599 after that, permanently. No extensions.</p></div>
+    <div class="faq-item"><div class="faq-q">Why does the price go up on September 21?</div><p class="faq-a">₹299 is the launch price. September 21 is a real hard deadline — ₹599 permanently after that. No extensions.</p></div>
     <div class="faq-item"><div class="faq-q">What if it doesn't help me?</div><p class="faq-a">30 days. Implement the strategies. If you genuinely tried and saw no improvement — DM @souvikk_09 for a full refund. <strong>The guarantee is real because the system works.</strong></p></div>
   </div>
 </section>
@@ -523,7 +368,7 @@ footer{background:var(--off);border-top:1px solid var(--rule);
 <section class="final">
   <div class="final-h">You already know<br>what to <em>decide.</em></div>
   <p class="final-sub">₹299 for the exact system growing @pallabimondal_ by 1,000+ followers every day. Or ₹0 — and the same position six months from now.</p>
-  <button class="btn-final" onclick="document.getElementById('buy').scrollIntoView({behavior:'smooth'})">Get the Blueprint — ₹299</button>
+  <button class="btn-final" onclick="goToBuy()">Get the Blueprint — ₹299</button>
   <div class="final-note">Price becomes ₹599 on September 21. No extensions.</div>
 </section>
 
@@ -532,135 +377,94 @@ footer{background:var(--off);border-top:1px solid var(--rule);
   <div class="ft-info">@souvikk_09 &nbsp;·&nbsp; @pallabimondal_<br>pallabimondal.collabs@gmail.com</div>
 </footer>
 
+<!-- CASHFREE SDK -->
+<script src="https://sdk.cashfree.com/js/v3/cashfree.js"></script>
 <script>
-// ── REAL PDF LINKS — only shown after verified payment ──
-var PDF_LINKS = {
-  phase1:  "https://drive.google.com/file/d/1F22J4AhxoBV1StZJMu_fCktFHWMrnwdL/view?usp=drive_link",
-  phase2a: "https://drive.google.com/file/d/1P7f7f0PxRZkAPAduYiFz6fMBXKviOkzQ/view?usp=drive_link",
-  phase2b: "https://drive.google.com/file/d/10ynNR7n55W2WAeJ8g4hmbr4yzEdFNGOe/view?usp=drive_link"
-};
+// ================================================================
+// REPLACE THIS with your Cloudflare Worker URL after deploying
+// Example: https://blueprint-worker.yourname.workers.dev
+// ================================================================
+var WORKER_URL = "https://blueprint-worker.byme.workers.dev";
 
-// ── VERIFIED EMAILS — add each buyer's email here after Cashfree confirms payment ──
-// You get payment confirmations on your Cashfree dashboard + email
-// Add the buyer's email below as: "buyer@email.com",
-// This list grows as sales come in
-var VERIFIED_EMAILS = [
-  // "example@gmail.com",   ← add real buyer emails here
-];
+function goToBuy() {
+  document.getElementById("buy").scrollIntoView({ behavior: "smooth" });
+}
 
-// ── COUNTDOWN ──
+// COUNTDOWN
 function tick() {
   var end  = new Date("2025-09-21T00:00:00+05:30").getTime();
-  var now  = new Date().getTime();
-  var diff = end - now;
+  var diff = end - Date.now();
   var wrap = document.getElementById("cd-wrap");
   if (diff <= 0) {
     if (wrap) wrap.innerHTML = '<span style="font-size:13px;font-weight:500;color:var(--rust);">Launch price has ended — guide now ₹599</span>';
     return;
   }
-  var pad = function(n){ return String(n).padStart(2,"0"); };
+  function p(n) { return String(n).padStart(2, "0"); }
   var el;
-  el = document.getElementById("cd-d"); if(el) el.textContent = pad(Math.floor(diff/86400000));
-  el = document.getElementById("cd-h"); if(el) el.textContent = pad(Math.floor((diff%86400000)/3600000));
-  el = document.getElementById("cd-m"); if(el) el.textContent = pad(Math.floor((diff%3600000)/60000));
-  el = document.getElementById("cd-s"); if(el) el.textContent = pad(Math.floor((diff%60000)/1000));
+  el = document.getElementById("cd-d"); if (el) el.textContent = p(Math.floor(diff / 86400000));
+  el = document.getElementById("cd-h"); if (el) el.textContent = p(Math.floor((diff % 86400000) / 3600000));
+  el = document.getElementById("cd-m"); if (el) el.textContent = p(Math.floor((diff % 3600000) / 60000));
+  el = document.getElementById("cd-s"); if (el) el.textContent = p(Math.floor((diff % 60000) / 1000));
 }
 tick();
 setInterval(tick, 1000);
 
-// ── VALIDATE EMAIL BEFORE OPENING CASHFREE ──
-function handlePayClick() {
-  var email = document.getElementById("buyer-email").value.trim();
-  var err   = document.getElementById("email-err");
+// VALIDATE
+function validate() {
+  var email = document.getElementById("f-email").value.trim();
+  var phone = document.getElementById("f-phone").value.replace(/\D/g, "");
+  var ok    = true;
+  var ee    = document.getElementById("err-email");
+  var pe    = document.getElementById("err-phone");
   if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-    err.classList.add("show");
-    document.getElementById("buyer-email").focus();
-    return false; // prevent link from opening
-  }
-  err.classList.remove("show");
-  // Save email to sessionStorage so we can pre-fill the verify box
-  sessionStorage.setItem("buyer_email", email);
-  return true; // allow link to open Cashfree
+    ee.classList.add("show"); ok = false;
+  } else { ee.classList.remove("show"); }
+  if (!phone || phone.length !== 10) {
+    pe.classList.add("show"); ok = false;
+  } else { pe.classList.remove("show"); }
+  return ok;
 }
 
-// ── SHOW ACCESS BOX ──
-function showAccessBox() {
-  var box = document.getElementById("access-box");
-  box.style.display = "block";
-  // Pre-fill with email from sessionStorage if available
-  var saved = sessionStorage.getItem("buyer_email");
-  if (saved) {
-    var inp = document.getElementById("access-email");
-    if (inp) inp.value = saved;
+// PAY
+async function startPayment() {
+  if (!validate()) { goToBuy(); return; }
+
+  var btn   = document.getElementById("pay-btn");
+  var name  = document.getElementById("f-name").value.trim()  || "Buyer";
+  var email = document.getElementById("f-email").value.trim();
+  var phone = document.getElementById("f-phone").value.replace(/\D/g, "");
+
+  btn.textContent = "Opening secure payment...";
+  btn.disabled    = true;
+
+  try {
+    // Step 1: Ask Worker to create a Cashfree order
+    var res = await fetch(WORKER_URL + "/create-order", {
+      method:  "POST",
+      headers: { "Content-Type": "application/json" },
+      body:    JSON.stringify({ name: name, email: email, phone: phone }),
+    });
+
+    if (!res.ok) throw new Error("Server error " + res.status);
+    var data = await res.json();
+    if (!data.payment_session_id) throw new Error(data.error || "No session ID");
+
+    // Step 2: Open Cashfree payment UI
+    // Buyer pays → Cashfree confirms → Worker receives webhook → sends PDF email
+    // Then Cashfree redirects buyer to success.html which also shows PDFs
+    var cashfree = Cashfree({ mode: "production" });
+    cashfree.checkout({
+      paymentSessionId: data.payment_session_id,
+      redirectTarget:   "_self",
+    });
+
+  } catch(err) {
+    console.error("Payment error:", err);
+    alert("Could not open payment. Please try again or DM @souvikk_09 on Instagram.");
+    btn.textContent = "Pay ₹299 — Get Instant Access";
+    btn.disabled    = false;
   }
-  box.scrollIntoView({ behavior: "smooth" });
-}
-
-// ── VERIFY EMAIL & SHOW PDFS ──
-function verifyAccess() {
-  var input = document.getElementById("access-email");
-  var err   = document.getElementById("access-error");
-  var email = (input ? input.value.trim().toLowerCase() : "");
-
-  if (!email) {
-    err.classList.add("show");
-    return;
-  }
-
-  // Check against verified buyers list
-  var found = VERIFIED_EMAILS.some(function(e) {
-    return e.toLowerCase() === email;
-  });
-
-  if (found) {
-    showPDFs();
-  } else {
-    err.classList.add("show");
-    err.textContent = "Email not found in confirmed payments. If you just paid, wait 2 minutes and try again. Still having trouble? DM @souvikk_09 on Instagram.";
-  }
-}
-
-// ── SHOW PDF DOWNLOAD PAGE ──
-function showPDFs() {
-  // Replace the entire buy section with the download page
-  var priceSection = document.getElementById("buy");
-  priceSection.innerHTML =
-    '<div style="max-width:580px;margin:0 auto;text-align:center;padding:0 0 20px;">' +
-    '<div style="font-size:52px;margin-bottom:18px;">🎉</div>' +
-    '<div style="font-family:var(--serif);font-size:36px;font-weight:300;color:var(--ink);letter-spacing:-0.02em;margin-bottom:10px;line-height:1.1;">Payment confirmed.<br><em style=\'font-style:italic;color:#16a34a;\'>Welcome.</em></div>' +
-    '<p style="font-size:14px;color:var(--mid);line-height:1.85;margin-bottom:32px;font-weight:300;max-width:420px;margin-left:auto;margin-right:auto;">Your complete Creator Blueprint is ready. Download all 3 parts below and save them to your device now.</p>' +
-
-    makeCard("Phase 1 of 3", "Chapters 1 – 4",
-      "Real story · E+E+E formula · Algorithm secrets · 5 Hook formulas · Colour psychology · ₹0 studio",
-      PDF_LINKS.phase1) +
-    makeCard("Phase 2A of 3", "Chapters 5 – 6",
-      "Caption formula · 5 hashtag sets · Brand deals · 3 email templates · Rate card · Negotiation rules",
-      PDF_LINKS.phase2a) +
-    makeCard("Phase 2B of 3", "Chapters 7 – 8 + Referral",
-      "Manager system · Affiliate stacking · Income roadmap · Referral programme · Closing letter",
-      PDF_LINKS.phase2b) +
-
-    '<div style="background:var(--gold-pale);border:1px solid var(--gold-mid);padding:16px 20px;margin:18px 0;text-align:left;">' +
-    '<div style="font-size:11px;font-weight:500;color:var(--gold);text-transform:uppercase;letter-spacing:0.12em;margin-bottom:7px;">How to download</div>' +
-    '<div style="font-size:12px;color:var(--mid);line-height:1.8;">Click each <strong>Download →</strong> button → Google Drive opens → tap the <strong>download icon (↓)</strong> at the top right → PDF saves to your device.<br><br>' +
-    '<strong>Bookmark this page</strong> — you can return anytime to re-download your files.</div>' +
-    '</div>' +
-    '<p style="font-size:12px;color:var(--muted);line-height:1.75;margin-top:8px;">Any issue? DM <strong>@souvikk_09</strong> on Instagram — we reply within 2 hours.</p>' +
-    '</div>';
-}
-
-function makeCard(phase, title, desc, link) {
-  return '<div style="background:var(--white);border:1px solid var(--rule);overflow:hidden;margin-bottom:10px;text-align:left;">' +
-    '<div style="background:var(--ink);padding:12px 20px;display:flex;align-items:center;justify-content:space-between;">' +
-    '<span style="font-size:10px;font-weight:500;color:rgba(255,255,255,0.42);letter-spacing:0.14em;text-transform:uppercase;">' + phase + '</span>' +
-    '<span style="font-size:13px;color:#fff;font-weight:400;">' + title + '</span>' +
-    '</div>' +
-    '<div style="padding:14px 20px;display:flex;align-items:center;justify-content:space-between;gap:16px;">' +
-    '<div style="font-size:12px;color:var(--mid);line-height:1.65;">' + desc + '</div>' +
-    '<a href="' + link + '" target="_blank" rel="noopener" style="display:inline-block;background:var(--ink);color:#fff;padding:10px 18px;font-size:13px;font-weight:500;text-decoration:none;white-space:nowrap;flex-shrink:0;transition:opacity 0.15s;font-family:var(--sans);" onmouseover="this.style.opacity=\'0.82\'" onmouseout="this.style.opacity=\'1\'">Download →</a>' +
-    '</div></div>';
 }
 </script>
-
 </body>
 </html>
