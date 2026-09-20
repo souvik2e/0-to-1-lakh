@@ -442,7 +442,7 @@ async function startPayment() {
     var res = await fetch(WORKER_URL + "/create-order", {
       method:  "POST",
       headers: { "Content-Type": "application/json" },
-      body:    JSON.stringify({ name: name, email: email, phone: phone }),
+      body:    JSON.stringify({ name: name, email: email, phone: "+91" + phone }),
     });
 
     if (!res.ok) throw new Error("Server error " + res.status);
